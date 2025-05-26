@@ -35,20 +35,20 @@ while True:
             print("No hay productos registrados.")
         else:
             print("\n--- Lista de Productos ---")
-            for i, prod in enumerate(productos, 1):
-                print(f"{i}. Nombre: {prod[0].upper()}\n, Categoría: {prod[1]}\n, Precio: ${prod[2]}\n")
+            for i, lista_productos in enumerate(productos, 1):
+                print(f"{i}. Nombre: {lista_productos[0].upper()}, Categoría: {lista_productos[1]}, Precio: ${lista_productos[2]}")
 
     elif opcion == "3":
         # Buscar producto
         termino = input("Ingrese el nombre del producto a buscar: ").strip().lower()
         encontrados = []
-        for prod in productos:
-            if termino in prod[0].lower():
-                encontrados.append(prod)
+        for lista_productos in productos:
+            if termino in lista_productos[0].lower():
+                encontrados.append(lista_productos)
         if encontrados:
             print("\nProductos encontrados:")
-            for prod in encontrados:
-                print(f"Nombre: {prod[0].upper()}\n, Categoría: {prod[1]}\n, Precio: ${prod[2]}")
+            for lista_productos in encontrados:
+                print(f"Nombre: {lista_productos[0].upper()}, Categoría: {lista_productos[1]}, Precio: ${lista_productos[2]}")
         else:
             print("No se encontraron productos con ese nombre.")
 
@@ -58,8 +58,8 @@ while True:
             print("No hay productos para eliminar.")
         else:
             print("\n--- Lista de Productos ---\n\n")
-            for i, prod in enumerate(productos, 1):
-                print(f"{i}. Nombre: {prod[0].upper()}, Categoría: {prod[1]}, Precio: ${prod[2]}")
+            for i, lista_productos in enumerate(productos, 1):
+                print(f"{i}. Nombre: {lista_productos[0].upper()}, Categoría: {lista_productos[1]}, Precio: ${lista_productos[2]}")
             while True:
                 num = input("Ingrese el número del producto a eliminar: ").strip()
                 if num.isdigit():
